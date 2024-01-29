@@ -1,0 +1,18 @@
+version: "3"
+services:
+  directus:
+    image: directus/directus:10.8.3
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/backend-directus/database
+      - ./uploads:/backend-directus/uploads
+      - ./extensions:/backend-directus/extensions
+    environment:
+      KEY: "replacesdfsdfsdfvalue"
+      SECRET: "reasfddsfsdfeeeksjdf"
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "d1r3ctu5"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      WEBSOCKETS_ENABLED: false
